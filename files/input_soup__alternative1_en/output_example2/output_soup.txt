@@ -1,0 +1,451 @@
+Alphabet Soup
+-------------
+The words to find will be taken from the file: files/soup_dictionary.txt
+
+Number of words rejected because they have less than 3 characters: 85
+Number of words to find: 19983
+
+word         y ,  x  direction
+---------------------------------------------------
+act         10 , 32  left--> right
+act         14 , 38  diag. top->bottom, left->right
+act         16 , 37  left--> right
+add          6 , 17  top--> bottom
+ado         13 ,  4  diag. top->bottom, left->right
+aft         13 ,  4  diag. top->bottom, right->left
+ago         11 , 29  right--> left
+aid         15 , 26  diag. bottom->top left->right
+ail         15 , 26  diag. bottom->top right->left
+air         13 , 26  diag. top->bottom, left->right
+air         14 , 38  left--> right
+ale         14 , 21  top--> bottom
+all         15 , 26  top--> bottom
+all         17 , 31  bottom--> top
+all         18 , 33  diag. bottom->top right->left
+alp          3 , 36  diag. top->bottom, left->right
+alp         18 , 27  diag. bottom->top right->left
+amra        11 ,  6  diag. bottom->top left->right
+and          9 , 19  diag. bottom->top right->left
+and         13 , 26  left--> right
+anecdotal    1 ,  2  diag. top->bottom, left->right
+ani          1 ,  2  left--> right
+ape         13 , 11  left--> right
+ape         16 , 37  diag. top->bottom, right->left
+apocalypse  18 , 24  bottom--> top
+arc         11 ,  6  diag. top->bottom, left->right
+arc         17 , 39  diag. top->bottom, right->left
+are          9 , 12  diag. bottom->top right->left
+are         18 , 27  right--> left
+are         19 , 22  right--> left
+area        18 , 27  right--> left
+arm          5 ,  1  bottom--> top
+arm          8 ,  9  diag. top->bottom, right->left
+art         15 , 40  bottom--> top
+ate          9 , 12  diag. top->bottom, left->right
+ate         11 , 18  diag. bottom->top left->right
+ate         15 , 40  diag. top->bottom, right->left
+ate         18 , 33  left--> right
+ate         19 , 22  left--> right
+auk         11 ,  6  right--> left
+awe          7 , 21  top--> bottom
+awl         18 , 24  diag. bottom->top left->right
+axe          5 , 37  right--> left
+axe         17 , 39  top--> bottom
+axle         9 , 12  right--> left
+aye         11 , 18  left--> right
+aye         13 ,  4  right--> left
+bad          2 , 18  diag. top->bottom, left->right
+bah         17 , 10  diag. bottom->top right->left
+bam          5 , 16  diag. top->bottom, left->right
+beg          4 ,  6  diag. bottom->top right->left
+bel         13 , 22  left--> right
+berate       6 ,  9  diag. top->bottom, left->right
+bet          1 , 21  right--> left
+bet         15 , 17  diag. top->bottom, left->right
+big          9 , 26  diag. top->bottom, left->right
+bow         20 , 14  left--> right
+bud         10 , 10  diag. top->bottom, right->left
+cake        14 , 37  bottom--> top
+can          1 ,  1  left--> right
+car         10 , 40  bottom--> top
+car         18 , 13  top--> bottom
+cat          8 , 19  top--> bottom
+cat         12 ,  4  top--> bottom
+chalice     14 , 37  top--> bottom
+chalk        4 , 40  right--> left
+cit         10 , 33  top--> bottom
+cod         12 , 26  diag. bottom->top left->right
+col         14 , 33  diag. top->bottom, right->left
+col         15 , 33  right--> left
+coo         18 , 13  bottom--> top
+coon        18 , 13  bottom--> top
+cop         15 , 24  top--> bottom
+cot          8 , 32  diag. top->bottom, left->right
+cot          9 , 37  left--> right
+cot         12 , 36  diag. bottom->top right->left
+cow          8 , 19  left--> right
+cow         15 , 23  diag. top->bottom, left->right
+cox         11 , 36  right--> left
+cpu         15 , 16  diag. top->bottom, right->left
+cud         20 , 38  left--> right
+cue          7 , 27  bottom--> top
+cue         14 , 17  diag. bottom->top right->left
+cup         18 , 13  diag. bottom->top left->right
+cut          3 , 31  left--> right
+cut         12 , 26  bottom--> top
+dab          4 , 20  diag. bottom->top right->left
+dam          9 ,  6  diag. bottom->top right->left
+day         14 ,  5  diag. bottom->top right->left
+dey         20 , 25  diag. bottom->top right->left
+die         20 , 33  diag. bottom->top left->right
+dim         11 , 12  diag. top->bottom, left->right
+don         20 , 33  left--> right
+dot          5 ,  6  diag. top->bottom, left->right
+dot         14 ,  5  diag. top->bottom, left->right
+draw         7 ,  1  top--> bottom
+dreg        11 , 16  right--> left
+dub         12 ,  8  diag. bottom->top left->right
+dun         14 ,  5  left--> right
+dying        4 , 20  left--> right
+each        18 , 40  diag. bottom->top right->left
+ear          7 , 10  diag. top->bottom, right->left
+ear         17 , 38  left--> right
+eel         15 , 22  diag. bottom->top left->right
+eel         19 , 24  diag. bottom->top left->right
+ego         11 , 20  diag. bottom->top left->right
+eke         18 , 35  diag. top->bottom, left->right
+eke         20 , 37  diag. bottom->top right->left
+elk         15 , 22  right--> left
+ell         16 , 21  left--> right
+era          7 , 10  diag. top->bottom, left->right
+era         18 , 25  left--> right
+era         19 , 20  left--> right
+erg          5 , 27  diag. top->bottom, right->left
+erg         16 , 18  diag. top->bottom, right->left
+eta          9 , 20  diag. top->bottom, right->left
+eta         11 , 14  diag. bottom->top right->left
+eta         17 , 38  diag. bottom->top left->right
+eta         18 , 35  right--> left
+eta         19 , 24  right--> left
+eve          5 , 27  diag. top->bottom, left->right
+eve          7 , 29  diag. bottom->top right->left
+eve         13 , 13  diag. top->bottom, left->right
+eve         15 , 15  diag. bottom->top right->left
+even         5 , 27  diag. top->bottom, left->right
+fall        14 , 26  top--> bottom
+far          1 , 33  right--> left
+far          4 , 17  diag. top->bottom, left->right
+fat          9 , 15  right--> left
+fee          3 ,  3  left--> right
+fee         14 , 36  top--> bottom
+fell        16 , 20  left--> right
+fig          5 , 12  top--> bottom
+fix          3 , 17  diag. top->bottom, right->left
+fix         14 , 26  left--> right
+flu         16 , 20  diag. bottom->top left->right
+flue        16 , 20  diag. bottom->top left->right
+foe         10 , 37  diag. bottom->top left->right
+foe         18 , 15  diag. top->bottom, left->right
+fog          5 , 31  left--> right
+fop          8 , 37  right--> left
+fro         18 , 15  top--> bottom
+gag         12 , 10  diag. top->bottom, left->right
+gag         14 , 12  diag. bottom->top right->left
+gap          3 , 38  top--> bottom
+gap         15 , 38  bottom--> top
+gap         15 , 38  diag. top->bottom, right->left
+gape        15 , 38  diag. top->bottom, right->left
+gar          2 , 14  left--> right
+gas         11 , 28  left--> right
+gate        12 , 17  diag. bottom->top left->right
+gel          7 , 36  left--> right
+get          2 ,  4  top--> bottom
+gin         15 , 27  bottom--> top
+got         10 , 21  left--> right
+gut          4 , 24  diag. bottom->top left->right
+ham          1 , 24  top--> bottom
+hem          1 , 27  right--> left
+hen         10 , 18  bottom--> top
+her         10 , 18  right--> left
+hew         20 , 20  bottom--> top
+hex          3 , 34  diag. top->bottom, left->right
+hex         16 , 17  diag. bottom->top left->right
+hoc          4 , 39  top--> bottom
+hoc         13 , 30  diag. bottom->top left->right
+hoc         15 ,  8  bottom--> top
+hoe          7 , 20  top--> bottom
+hoe         15 , 11  right--> left
+hog          1 , 30  diag. top->bottom, right->left
+hoi         12 , 35  bottom--> top
+hold         9 ,  5  right--> left
+hop          5 , 40  right--> left
+hue         11 , 10  right--> left
+hurt         8 , 25  left--> right
+hut         11 , 39  bottom--> top
+ice         11 , 33  right--> left
+ice         12 , 13  left--> right
+ice         18 , 37  top--> bottom
+ill          6 , 38  top--> bottom
+ill         15 , 30  diag. top->bottom, left->right
+imp         12 , 13  diag. top->bottom, left->right
+inch        16 , 35  diag. bottom->top right->left
+inn          6 , 12  diag. bottom->top right->left
+inner        6 , 12  diag. bottom->top right->left
+ire         19 , 38  bottom--> top
+ivy          1 , 22  top--> bottom
+ivy          8 , 34  diag. top->bottom, left->right
+jay         11 , 17  left--> right
+jet          2 ,  6  diag. top->bottom, right->left
+jot          4 , 31  diag. top->bottom, left->right
+joy          2 , 30  right--> left
+jug         12 , 16  top--> bottom
+keg         18 , 18  right--> left
+kelp        14 , 10  diag. top->bottom, right->left
+kick         9 , 34  diag. top->bottom, left->right
+kin          1 ,  5  right--> left
+kit          9 , 34  bottom--> top
+lac         13 , 24  top--> bottom
+lad         20 , 12  diag. bottom->top left->right
+lain        17 , 32  diag. top->bottom, left->right
+lam          9 , 30  diag. bottom->top right->left
+land        10 , 20  diag. bottom->top right->left
+lase        17 , 26  diag. top->bottom, left->right
+law         15 , 21  bottom--> top
+lea          7 , 38  diag. top->bottom, left->right
+lea         16 , 23  diag. bottom->top right->left
+lea         17 , 37  left--> right
+leaf        16 , 23  diag. bottom->top right->left
+led         15 , 31  diag. top->bottom, left->right
+lee         13 , 24  diag. top->bottom, right->left
+lee         17 , 26  diag. top->bottom, right->left
+leg          7 , 38  right--> left
+lest        12 ,  2  top--> bottom
+let         19 , 25  right--> left
+lew         19 , 25  bottom--> top
+lice        17 , 37  top--> bottom
+life        19 , 17  left--> right
+lim         15 , 31  right--> left
+lip          7 , 38  bottom--> top
+loan        13 , 24  left--> right
+long         2 , 11  left--> right
+lop         16 , 23  left--> right
+lot         12 , 28  diag. bottom->top right->left
+love         6 , 24  diag. top->bottom, right->left
+low          8 , 38  top--> bottom
+mad          7 ,  4  diag. top->bottom, left->right
+map         17 , 12  top--> bottom
+mat          2 , 20  diag. top->bottom, right->left
+maw          6 , 21  top--> bottom
+mew          3 ,  1  diag. top->bottom, left->right
+mew          7 ,  9  left--> right
+mew         10 ,  7  diag. top->bottom, left->right
+mid         13 , 14  diag. bottom->top right->left
+mop         16 , 11  diag. bottom->top right->left
+mot          4 ,  9  diag. top->bottom, left->right
+much         7 , 28  diag. bottom->top right->left
+nap         15 , 14  diag. bottom->top right->left
+nee          7 , 22  diag. top->bottom, left->right
+net         14 ,  7  top--> bottom
+neve         8 , 30  diag. bottom->top right->left
+never        8 , 30  diag. bottom->top right->left
+new         11 , 25  bottom--> top
+nip          5 , 11  diag. top->bottom, left->right
+nip         15 , 34  diag. top->bottom, left->right
+nod         20 , 35  right--> left
+node        20 , 35  right--> left
+nor         14 ,  7  bottom--> top
+not         14 ,  7  diag. top->bottom, right->left
+novo        17 ,  9  diag. top->bottom, right->left
+now         15 , 13  diag. top->bottom, left->right
+nut         17 ,  9  top--> bottom
+oaf          5 , 39  diag. bottom->top right->left
+oaf          9 ,  4  diag. top->bottom, right->left
+oaf         12 , 38  diag. top->bottom, right->left
+oat          8 , 20  diag. bottom->top left->right
+ode         20 , 34  right--> left
+oft         13 ,  7  right--> left
+ohm         13 , 31  diag. top->bottom, right->left
+oil          7 , 40  right--> left
+oil         18 ,  8  top--> bottom
+old          9 ,  4  right--> left
+one         13 ,  7  top--> bottom
+orb         19 , 10  bottom--> top
+our         18 ,  8  left--> right
+owe         20 , 15  left--> right
+own         19 ,  1  diag. bottom->top left->right
+pad         13 , 12  right--> left
+paid        16 , 25  diag. bottom->top left->right
+pan         13 , 12  diag. top->bottom, left->right
+pap         19 , 12  left--> right
+pap         19 , 14  right--> left
+pax          5 , 38  right--> left
+pea         14 ,  9  top--> bottom
+peanut      14 ,  9  top--> bottom
+pee         17 , 36  bottom--> top
+pep         14 , 15  top--> bottom
+pep         16 , 15  bottom--> top
+per          7 , 13  bottom--> top
+per         13 , 15  bottom--> top
+per         15 , 19  diag. top->bottom, right->left
+phi         16 , 25  bottom--> top
+pie          8 , 35  right--> left
+pie         13 , 12  diag. bottom->top left->right
+piece        8 , 35  right--> left
+pill         5 , 38  top--> bottom
+pillow       5 , 38  top--> bottom
+pin          7 , 13  diag. bottom->top right->left
+pin         17 , 36  diag. bottom->top right->left
+pinch       17 , 36  diag. bottom->top right->left
+plea        17 , 24  diag. bottom->top right->left
+plea        17 , 36  left--> right
+plod        17 , 36  right--> left
+pol         16 , 25  right--> left
+poll        16 , 25  right--> left
+pot         17 ,  7  diag. top->bottom, left->right
+ppm          7 , 13  left--> right
+prep         4 , 13  top--> bottom
+pro         19 , 14  left--> right
+proliferate 19 , 14  left--> right
+pug         14 , 15  diag. bottom->top left->right
+rag          2 , 16  right--> left
+rat          8 , 11  diag. top->bottom, left->right
+rat          8 , 13  diag. top->bottom, right->left
+rat          8 , 15  diag. top->bottom, right->left
+rat         14 , 40  top--> bottom
+rat         18 , 38  diag. bottom->top left->right
+rat         19 , 21  left--> right
+rate         8 , 11  diag. top->bottom, left->right
+rate        19 , 21  left--> right
+raw          4 ,  1  top--> bottom
+raw          8 ,  1  top--> bottom
+ray         18 , 26  left--> right
+reb          8 , 11  diag. bottom->top right->left
+red         18 , 38  diag. top->bottom, left->right
+rep          5 , 13  top--> bottom
+rep         11 , 15  top--> bottom
+rep         17 , 17  diag. bottom->top left->right
+ret          4 ,  1  left--> right
+ret          6 , 26  diag. bottom->top left->right
+ret         17 , 40  top--> bottom
+rev          4 , 26  diag. top->bottom, left->right
+rev         12 ,  7  diag. bottom->top left->right
+rig          8 , 27  diag. top->bottom, left->right
+rivet       18 , 38  right--> left
+roe          6 , 23  top--> bottom
+roe         11 , 23  diag. bottom->top right->left
+rot         12 , 32  right--> left
+rum          2 , 17  diag. top->bottom, right->left
+rum         12 ,  7  bottom--> top
+rum         19 , 21  bottom--> top
+rut          9 ,  8  bottom--> top
+sag         11 , 30  right--> left
+sago        11 , 30  right--> left
+sap          2 , 19  top--> bottom
+sat          6 , 18  bottom--> top
+say         20 , 21  diag. bottom->top left->right
+sea          9 , 17  left--> right
+sec          2 ,  5  top--> bottom
+sec         11 , 30  left--> right
+see          3 ,  6  right--> left
+self        14 ,  2  bottom--> top
+sen          8 ,  7  diag. bottom->top right->left
+set          2 ,  5  diag. top->bottom, right->left
+set         10 , 24  left--> right
+sew         10 , 24  bottom--> top
+shy          9 , 17  diag. top->bottom, left->right
+sod         16 , 12  diag. top->bottom, left->right
+sop          6 ,  8  right--> left
+sora         6 , 40  top--> bottom
+spin         8 , 14  diag. bottom->top right->left
+spy         10 , 24  top--> bottom
+stag         6 , 34  right--> left
+stow         5 , 21  diag. top->bottom, left->right
+stun        20 ,  9  bottom--> top
+tack        14 ,  4  bottom--> top
+tad         12 , 30  diag. bottom->top right->left
+tag          3 , 33  top--> bottom
+tag          6 , 33  right--> left
+tag         10 , 19  diag. top->bottom, right->left
+tam          4 , 18  diag. bottom->top left->right
+tan          8 , 28  left--> right
+tao          6 , 22  diag. top->bottom, right->left
+tar         10 , 11  diag. bottom->top left->right
+tar         10 , 13  diag. bottom->top left->right
+tar         10 , 13  diag. bottom->top right->left
+tar         16 , 40  bottom--> top
+tar         16 , 40  diag. top->bottom, right->left
+tar         19 , 23  right--> left
+tart        16 , 40  bottom--> top
+tax          9 , 13  right--> left
+tax         16 , 39  top--> bottom
+tea          6 , 11  diag. top->bottom, right->left
+tea         12 , 30  diag. bottom->top left->right
+tear         6 , 11  diag. top->bottom, right->left
+ted         10 , 19  diag. bottom->top right->left
+tee         10 , 13  diag. top->bottom, left->right
+tee         12 , 23  top--> bottom
+ten         16 ,  7  bottom--> top
+tenor       16 ,  7  bottom--> top
+test        10 , 26  right--> left
+the          3 , 33  left--> right
+the         10 , 19  right--> left
+tic         12 , 33  bottom--> top
+tid          8 , 28  top--> bottom
+tid         10 , 26  left--> right
+tie          2 , 10  diag. top->bottom, left->right
+tie          6 , 11  left--> right
+tie         16 , 34  left--> right
+tier         2 , 10  diag. top->bottom, left->right
+today       16 ,  7  diag. bottom->top right->left
+tog         10 , 23  right--> left
+ton         16 ,  5  diag. bottom->top left->right
+top         19 ,  9  diag. bottom->top right->left
+tor         12 , 30  left--> right
+tort        12 , 30  left--> right
+tot         16 , 34  top--> bottom
+tot         18 , 34  bottom--> top
+tow          6 , 22  diag. top->bottom, left->right
+tow         10 , 23  diag. bottom->top right->left
+tow         19 ,  9  left--> right
+trot        12 , 33  right--> left
+tug          2 , 26  diag. top->bottom, right->left
+tun         19 ,  9  bottom--> top
+tuna        19 ,  9  bottom--> top
+ugly         8 , 26  diag. bottom->top right->left
+use          1 ,  6  diag. top->bottom, right->left
+use          7 , 33  diag. bottom->top left->right
+van         19 , 26  diag. bottom->top left->right
+vat          4 , 34  right--> left
+vet          4 ,  8  diag. bottom->top left->right
+vet         18 , 36  right--> left
+villa       14 , 29  diag. top->bottom, left->right
+villain     14 , 29  diag. top->bottom, left->right
+viz          3 , 15  diag. top->bottom, left->right
+von         19 ,  7  diag. bottom->top left->right
+wale        13 , 21  top--> bottom
+war          6 ,  1  bottom--> top
+war         10 ,  1  bottom--> top
+ward        10 ,  1  bottom--> top
+warm         6 ,  1  bottom--> top
+way          2 , 23  left--> right
+web         20 , 16  left--> right
+wee          6 , 35  bottom--> top
+weld        17 , 25  top--> bottom
+wet          8 , 21  diag. top->bottom, right->left
+wet         12 , 21  diag. bottom->top right->left
+win          2 , 23  top--> bottom
+winy         2 , 23  top--> bottom
+wit         12 , 21  diag. bottom->top left->right
+woe          6 , 29  diag. top->bottom, left->right
+won         17 , 15  diag. bottom->top right->left
+yaw          2 , 25  right--> left
+yen         11 , 19  left--> right
+yin          3 , 22  top--> bottom
+yin          4 , 21  left--> right
+yip          3 , 12  right--> left
+yon          5 ,  9  left--> right
+yuh          2 , 25  top--> bottom
+zag         12 , 29  bottom--> top
+
+------
+Number of words found: 328

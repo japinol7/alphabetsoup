@@ -1,0 +1,4 @@
+## TODOs & Wishlist ##
+
+* Add option (-g --generate) to generate an alphabet soup from a list of words
+  instead of solving it.
