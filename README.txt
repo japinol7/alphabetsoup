@@ -9,7 +9,7 @@ alphabet_soup
  author_twitter: @japinol
  main module: alphabet_soup.py
  other modules: utils.py
- Python versions tested: 3.6.6 and 3.7.1 64bits under Windows 10
+ Python versions tested: 3.6.6 and 3.7.1 64bits under Windows 10.  Last minor changes tested with v. 3.7.3
 
  Objective: To solve an alphabet soup finding a given list of words inside it.
  Input (text file):
@@ -37,8 +37,7 @@ alphabet_soup
 
 		 
 
-
->> Usage:  alphabetsoup [-h] [-i INFILE] [-o OUTFILE] [-d DICT] [-n NAME] [-m] [-r]
+>> Usage:  alphabetsoup [-h] [-i INFILE] [-o OUTFILE] [-d DICT] [-n NAME] [-m] [-r] [-t]
 
 	optional arguments:
 	  -h, --help            show this help message and exit
@@ -56,6 +55,8 @@ alphabet_soup
 	                        compatibility with Spanish and Catalan soups. Example:
 	                        'ànim' and 'mäñanúç' will be changed to 'anim' and
 	                        'mañanuç'.
+	  -t, --debugtraces		show debug back traces information when something goes wrong.
+
 
 >> Examples of usage:
 	> If alphabetsoup has been installed as an app:

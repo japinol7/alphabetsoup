@@ -3,6 +3,7 @@ __author__ = 'Joan A. Pinol  (japinol)'
 
 from unicodedata import normalize, combining
 
+
 def remove_diacritics_from_str(input_str, preserve_char_set=None):
     """Removes diacritics from a string, for the unicode characters that are tagged as diacritic.
        Returns a string with diacritics removed.
@@ -26,6 +27,7 @@ def remove_diacritics_from_str(input_str, preserve_char_set=None):
         for ch in preserve_chars:
             norm_str = norm_str.replace("<&&%s&&>" % ch[1], ch[0])
     return norm_str
+
 
 def normalize_str(input_str):
     """Normalizes a string removing all diacritics.

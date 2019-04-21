@@ -3,15 +3,17 @@ __author__ = 'Joan A. Pinol  (japinol)'
 __version__ = '1.0.2'
 
 from argparse import ArgumentParser
+import traceback
 
-from alphabetsoup.alphabet_soup import AlphabetSoup
+from alphabetsoup.alphabet_soup import AlphabetSoup, logger
+
 
 def main():
     """Main Program."""
     # Parse optional arguments from the command line
     parser = ArgumentParser(description="Alphabet Soup Solver.",
                             prog="alphabetsoup",
-                            usage="%(prog)s [-h] [-i INFILE] [-o OUTFILE] [-d DICT] [-n NAME] [-m] [-r]")
+                            usage="%(prog)s [-h] [-i INFILE] [-o OUTFILE] [-d DICT] [-n NAME] [-m] [-r] [-t]")
     parser.add_argument('-i', '--infile', default=None,
                         help='input file where there is the soup to solve.')
     parser.add_argument('-o', '--outfile', default=None,
@@ -26,15 +28,26 @@ def main():
                         help="normalizes data removing diacritics from the words to find. "
                              "The characters ñ and ç will not be changed for compatibility with Spanish and Catalan soups. "
                              "Example: 'ànim' and 'mäñanúç' will be changed to 'anim' and 'mañanuç'.")
+    parser.add_argument('-t', '--debugtraces', default=None, action='store_true',
+                        help='Show debug back traces information when something goes wrong.')
     args = parser.parse_args()
 
     # Solve the alphabet soup
-    alphabet_soup = AlphabetSoup(name=args.name, in_file=args.infile, out_file=args.outfile, 
-                                 external_dict_file=args.dict, more_info=args.moreinfo,
-                                 remove_diacritics=args.rmdiacritics)
-    alphabet_soup.read_data()
-    alphabet_soup.search_words_in_the_soup()
-    print()
+    try:
+        alphabet_soup = AlphabetSoup(name=args.name, in_file=args.infile, out_file=args.outfile, 
+                                     external_dict_file=args.dict, more_info=args.moreinfo,
+                                     remove_diacritics=args.rmdiacritics)
+        alphabet_soup.read_data()
+        alphabet_soup.search_words_in_the_soup()
+        print()
+    except FileNotFoundError as e:
+        if args.debugtraces:
+            traceback.print_tb(e.__traceback__)
+        logger.critical(f'File not found error: {e}')
+    except Exception as e:
+        if args.debugtraces:
+            traceback.print_tb(e.__traceback__)
+        logger.critical(f'Error: {e}')
 
 
 if __name__ == '__main__':

@@ -7,6 +7,7 @@ import logging
 
 from alphabetsoup.utils import remove_diacritics_from_str
 
+
 # Module Constants
 WORDS_MIN_CHARS = 3    # Minimum characters for each word to be searched
 WORDS_MIN_SEARCH = 1   # Minimum words to be searched
@@ -31,9 +32,11 @@ ERROR_OUT_FILE_WRITING = "!!! ERROR writing output file: %s. Some information ha
 ERROR_OUT_FILE_MAX_TRIES = "!!! ERROR: Too much tries failed writing to the output file: %s. Search aborted !!!"
 MAX_ERRORS_OUT_FILE = 5         # Max writing errors when trying to write the buffer to the output file
 
+
 logging.basicConfig(format='%(asctime)s %(levelname)s %(name)s: %(message)s')
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
+
 
 class AlphabetSoup:
     """Solves an alphabet soup finding a given list of words inside it."""
@@ -91,7 +94,7 @@ class AlphabetSoup:
                     i += 1
         except FileNotFoundError:
             self._error_in_file = True
-            self._write_line("Input file not found: %s" %  self._in_file)
+            self._write_line(f"Input file not found: {self._in_file}")
         except Exception:
             self._error_in_file = True
 
@@ -160,7 +163,7 @@ class AlphabetSoup:
     def _read_words_to_find_from_file(self):
         """Reads the words to find from an external file. This file must have a word for line."""
         try:
-            self._write_line("The words to find will be taken from the file: %s" % self._external_dict_file)
+            self._write_line(f"The words to find will be taken from the file: {self._external_dict_file}")
             with open(self._external_dict_file, "r", encoding='utf-8') as in_file:
                 for line_in in in_file:
                     line = line_in.strip().replace("\n", "").replace(" ", "").lower()
@@ -170,7 +173,7 @@ class AlphabetSoup:
                         self._num_words_too_short += 1
         except FileNotFoundError:
             self._error_in_file = True
-            self._write_line("Input file not found: %s" % self._external_dict_file)
+            self._write_line(f"Input file not found: {self._external_dict_file}")
         except Exception:
             self._error_in_file = True
 
@@ -180,18 +183,17 @@ class AlphabetSoup:
         for wordSoup in self._soup:
             if len(wordSoup) != self._num_cols: 
                 self._error_in_file = True
-                self._write_line("!!! ERROR: The first row of the soup has %s columns."
-                                 "The other rows must have this very number of columns !!!" 
-                                 % str(self._num_cols))
+                self._write_line(f"!!! ERROR: The first row of the soup has {self._num_cols} columns. "
+                                 "Every other row must have this very number of columns !!!")
                 return
         # Check rows, columns and minimum words to search.
         if (self._num_rows < SOUP_MIN_ROWS or self._num_cols < SOUP_MIN_COLS 
             or self._num_words < WORDS_MIN_SEARCH):
             self._error_in_file = True
-            self._write_line("!!! Input data error. Some of the following rules has been violated:  !!!")
-            self._write_line("    > Minimum rows: %s" % str(SOUP_MIN_ROWS))
-            self._write_line("    > Minimum columns %s: " % str(SOUP_MIN_COLS))
-            self._write_line("    > Minimum words to find: %s" % str(WORDS_MIN_SEARCH))
+            self._write_line("!!! Input data error. Some of the following rules has been violated: !!!")
+            self._write_line(f"    > Minimum rows: {SOUP_MIN_ROWS}")
+            self._write_line(f"    > Minimum columns: {SOUP_MIN_COLS}")
+            self._write_line(f"    > Minimum words to find: {WORDS_MIN_SEARCH}")
 
     def _search_word_in_the_soup(self, word):
         """Searches a word in the alphabet soup."""
@@ -277,13 +279,14 @@ class AlphabetSoup:
     def _write_header_of_the_search(self):
         """Writes the header of the search."""
         if self._num_words_too_short > 0:
-            self._write_line('\nNumber of words rejected because they have less than %s characters: %s' %(str(WORDS_MIN_CHARS), str(self._num_words_too_short)))
-        self._write_line('Number of words to find: %s\n' % str(self._num_words))
+            self._write_line(f'\nNumber of words rejected because they have less than {WORDS_MIN_CHARS} characters: '
+                             f'{self._num_words_too_short}')
+        self._write_line(f'Number of words to find: {self._num_words}\n')
         self._write_data_to_file()
 
     def _write_summary_of_the_search(self):
         """Writes the summary of the search."""
-        self._write_line('\n------\nNumber of words found: %s' % str(len(self._words_found)))
+        self._write_line(f'\n------\nNumber of words found: {len(self._words_found)}')
         self._write_data_to_file()
 
         # Write more summary info.
@@ -297,9 +300,9 @@ class AlphabetSoup:
             words_not_found = list(words_not_found)
             words_not_found.sort()
             self._write_line("\n\n------- More info -------\n")
-            self._write_line("Words found: \n%s\n" % str(self._words_found))
-            self._write_line('Number of words not found: %s\n' % str(len(words_not_found)))
-            self._write_line("These words are not in the soup: \n%s" % str(words_not_found))
+            self._write_line(f"Words found: \n{self._words_found}\n")
+            self._write_line(f"Number of words not found: {len(words_not_found)}\n")
+            self._write_line(f"These words are not in the soup: \n{words_not_found}")
             self._write_data_to_file()
            
     def _format_msg_word_found(self, word, i, j, direction_txt):
@@ -312,7 +315,7 @@ class AlphabetSoup:
 
     def _write_line(self, line):
         """Writes a line to the output file."""
-        self._str_out.append('%s\n' % line)
+        self._str_out.append(f'{line}\n')
 
     def _write_data_to_file(self, open_method='a'):
         """Writes the data still in the buffer to the output file."""
