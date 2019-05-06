@@ -10,7 +10,7 @@ def remove_diacritics_from_str(input_str, preserve_char_set=None):
        Example 1: If you want to remove all diacritics from "Hóla cañaçö cano CAÑAÇ CANAC":
             remove_diacritics_from_str("Hóla cañaçö cano CAÑAÇ CANAC")
         It will return "Hola canaco cano CANAC CANAC".
-       Example 2: If you want to remove all diacritics except for 'ñ' and 'ç' from "Hóla cañaçö cano": 
+       Example 2: If you want to remove all diacritics except for 'ñ' and 'ç' from "Hóla cañaçö cano":
             remove_diacritics_from_str("Hóla cañaçö cano CAÑAÇ CANAC", preserve_char_set=('ñ','ç'))
         It will return "Hola cañaço cano CAÑAÇ CANAC".
     """

@@ -13,13 +13,13 @@ WORDS_MIN_CHARS = 3    # Minimum characters for each word to be searched
 WORDS_MIN_SEARCH = 1   # Minimum words to be searched
 SOUP_MIN_ROWS = 7      # Minimum rows in the table that represents the alphabet soup
 SOUP_MIN_COLS = 7      # Minimum columns in the table that represents the alphabet soup
-READ_WORDS_FROM_FILE = "read_from_dictionary"      # String used to know if the words to be found will be read from a dictionary in a external file 
+READ_WORDS_FROM_FILE = "read_from_dictionary"      # String used to know if the words to be found will be read from a dictionary in a external file
 MORE_INFO_STRING = "more_info"  # String used to know if we have to display more info
 SAVE_BUFFER_EACH_N_WORDS = 90   # How many words to be found before saving the buffer to the output file
-PR_DOT_EACH_N_WORDS = 4000      # How many words searched between progress dots  
+PR_DOT_EACH_N_WORDS = 4000      # How many words searched between progress dots
 PR_DOT_NEW_LINE = 50            # How many words written before new line of dots
 SOUP_NAME_DEFAULT = "Alphabet Soup"
-DIACRITICS_PRESERVE_CHAR_SET = ('ñ', 'ç')   # When removing diacritics normalizing a string, the chars in the tuple will be preserved  
+DIACRITICS_PRESERVE_CHAR_SET = ('ñ', 'ç')   # When removing diacritics normalizing a string, the chars in the tuple will be preserved
 # Files
 IN_FILE_DEFAULT = "files/input_soup.txt"
 OUT_FILE_DEFAULT = "output/output_soup.txt"
@@ -40,7 +40,7 @@ logger.setLevel(logging.DEBUG)
 
 class AlphabetSoup:
     """Solves an alphabet soup finding a given list of words inside it."""
-    
+
     def __init__(self, name=None, in_file=None, out_file=None, external_dict_file=None,
                  more_info=None, remove_diacritics=None):
         self._name = str(name) if name else SOUP_NAME_DEFAULT
@@ -61,9 +61,9 @@ class AlphabetSoup:
         self._error_in_file = False          # If true, and error in the input file has been detected.
         self._num_errors_out_file = 0        # How many errors writing the output file
         self._progress_dots_count = 0        # How many progress dots have been displayed
-        
+
         # Put soup's name to the buffer of the output file.
-        self._write_line('%s\n%s' %(self._name, '-' * len(self._name)))
+        self._write_line('%s\n%s' % (self._name, '-' * len(self._name)))
 
     def read_data(self):
         """Reads the words to find and the alphabet soup."""
@@ -72,12 +72,12 @@ class AlphabetSoup:
             with open(self._in_file, "r", encoding='utf-8') as in_file:
                 i = 0
                 for line_in in in_file:
-                    line = line_in.lower().replace('\n','').replace(' ','')
+                    line = line_in.lower().replace('\n', '').replace(' ', '')
                     if i == 0:
-                        # Read the list of words to find from the first line if the words are not to be read from a file. 
+                        # Read the list of words to find from the first line if the words are not to be read from a file.
                         if line != READ_WORDS_FROM_FILE and not self._read_words_from_file:
                             self._words = line.split(',')
-                        else:       
+                        else:
                             # The words to find will be read from an external file.
                             self._read_words_from_file = True
                     elif i >= 2:
@@ -90,7 +90,7 @@ class AlphabetSoup:
                             self._num_cols = len(line)
                         else:
                             if len(line) != self._num_cols:
-                                break 
+                                break
                     i += 1
         except FileNotFoundError:
             self._error_in_file = True
@@ -105,18 +105,19 @@ class AlphabetSoup:
         else:
             # Discard the words to find that have too few characters.
             for word in self._words[:]:
-                if len(word) < WORDS_MIN_CHARS: 
+                if len(word) < WORDS_MIN_CHARS:
                     self._num_words_too_short += 1
                     self._words.remove(word)
 
         # Remove diacritics from the words to find
         if self._remove_diacritics:
-            self._words = [remove_diacritics_from_str(word, preserve_char_set=DIACRITICS_PRESERVE_CHAR_SET) for word in self._words]
+            self._words = [remove_diacritics_from_str(word, preserve_char_set=DIACRITICS_PRESERVE_CHAR_SET)
+                           for word in self._words]
 
         # Remove duplicated words to find and sort the list.
         self._words = list(set(self._words))
         self._words.sort()
-        
+
         self._num_words = len(self._words)
         # Check if there is something wrong with the input data.
         if not self._error_in_file:
@@ -124,7 +125,7 @@ class AlphabetSoup:
 
         # Check if error reading an input file.
         if self._error_in_file:
-            self._write_line(ERROR_IN_FILE  % self._in_file)
+            self._write_line(ERROR_IN_FILE % self._in_file)
         self._write_data_to_file(open_method='w')
 
     def search_words_in_the_soup(self):
@@ -154,7 +155,7 @@ class AlphabetSoup:
         # Write the summary of the search.
         self._write_summary_of_the_search()
         self._print_progress_dots(char_str=']')
-        
+
         # Check if all the buffer has been written to the output file.
         if self._str_out and self._num_errors_out_file > 0:
             logger.critical(ERROR_OUT_FILE_WRITING % self._out_file)
@@ -187,8 +188,8 @@ class AlphabetSoup:
                                  "Every other row must have this very number of columns !!!")
                 return
         # Check rows, columns and minimum words to search.
-        if (self._num_rows < SOUP_MIN_ROWS or self._num_cols < SOUP_MIN_COLS 
-            or self._num_words < WORDS_MIN_SEARCH):
+        if (self._num_rows < SOUP_MIN_ROWS or self._num_cols < SOUP_MIN_COLS
+                or self._num_words < WORDS_MIN_SEARCH):
             self._error_in_file = True
             self._write_line("!!! Input data error. Some of the following rules has been violated: !!!")
             self._write_line(f"    > Minimum rows: {SOUP_MIN_ROWS}")
@@ -304,14 +305,14 @@ class AlphabetSoup:
             self._write_line(f"Number of words not found: {len(words_not_found)}\n")
             self._write_line(f"These words are not in the soup: \n{words_not_found}")
             self._write_data_to_file()
-           
+
     def _format_msg_word_found(self, word, i, j, direction_txt):
         """Formats the message for a word found. Return a string."""
-        return '%s %s , %s  %s' %(word.ljust(11), str(i+1).rjust(2), str(j+1).rjust(2), direction_txt)
+        return '%s %s , %s  %s' % (word.ljust(11), str(i+1).rjust(2), str(j+1).rjust(2), direction_txt)
 
     def _format_msg_word_found_header(self):
         """Formats the header for the messages for words found. Return a string."""
-        return '%s %s , %s  %s\n%s' %("word".ljust(11), "y".rjust(2), "x".rjust(2), "direction", "-" * 51)
+        return '%s %s , %s  %s\n%s' % ("word".ljust(11), "y".rjust(2), "x".rjust(2), "direction", "-" * 51)
 
     def _write_line(self, line):
         """Writes a line to the output file."""
@@ -322,14 +323,14 @@ class AlphabetSoup:
         if not self._str_out:
             return
         try:
-            with open(self._out_file, open_method, encoding='utf-8') as out_file: 
+            with open(self._out_file, open_method, encoding='utf-8') as out_file:
                 for line in self._str_out:
                     out_file.write(line)
         except Exception:
             if open_method == 'w':
                 logger.critical(ERROR_OUT_FILE_OPEN % self._out_file)
                 exit()
-            else:    
+            else:
                 self._num_errors_out_file += 1
                 if self._num_errors_out_file >= MAX_ERRORS_OUT_FILE:
                     logger.critical(ERROR_OUT_FILE_MAX_TRIES % self._out_file)

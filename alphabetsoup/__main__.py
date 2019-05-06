@@ -34,7 +34,7 @@ def main():
 
     # Solve the alphabet soup
     try:
-        alphabet_soup = AlphabetSoup(name=args.name, in_file=args.infile, out_file=args.outfile, 
+        alphabet_soup = AlphabetSoup(name=args.name, in_file=args.infile, out_file=args.outfile,
                                      external_dict_file=args.dict, more_info=args.moreinfo,
                                      remove_diacritics=args.rmdiacritics)
         alphabet_soup.read_data()
